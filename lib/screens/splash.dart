@@ -1,6 +1,3 @@
-
-
-
 import 'dart:async';
 
 import 'package:auto_adjust/auto_adjust.dart';
@@ -19,9 +16,8 @@ class SplashScreen extends StatefulHookWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-
   @override
-  void initState(){
+  void initState() {
     initialAction();
     super.initState();
   }
@@ -47,7 +43,6 @@ class _SplashScreenState extends State<SplashScreen>
     );
     SizeConfig().init(context, 896, 386);
     return Scaffold(
-    
       body: Center(
         child: SizedBox(
           height: autoAdjustHeight(250),
@@ -55,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen>
           child: ScaleTransition(
             scale: animation,
             child: Image.asset(
-              'assets/images/mainlogo.png',
+              'assests/images/mainlogo.png',
               height: autoAdjustHeight(85),
               width: autoAdjustWidth(240),
               fit: BoxFit.contain,
