@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bankly Transaction',
+      
       theme: BanklyThemeData.appThemeData(context),
       home: const SplashScreen(),
     );

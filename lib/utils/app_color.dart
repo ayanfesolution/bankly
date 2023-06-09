@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-const kPRYCOLOUR = Color.fromRGBO(41, 108, 240, 1);
-const kSECCOLOUR = Color(0xFFE9E9FF);
+const kPRYCOLOUR = Color(0xFF296CF0);
+const kSECCOLOUR = Color(0xFFF4F7FF);
+
 //const kAppBlueColor = Color(0xFF1B5F96);
 const kBLKCOLOUR = Color(0xff191919);
 const kWHTCOLOUR = Color(0xFFFFFFFF);
 const Color kBLKLIGHTColor = Color(0xFF9FA2AB);
+const Color kBLKLIGHTDeepColor = Color(0xFF828282);
 const kREDCOLOUR = Color(0xFFE92022);
 // const kTransperent = Color(0x00FFFFFF);
 const kScalfold = Color(0xFFFBFBFF);
@@ -29,4 +31,7 @@ Map<int, Color> kPrimaryColorMap = {
   900: const Color.fromRGBO(41, 108, 240, 1),
 };
 
-MaterialColor customKPrimaryColor = MaterialColor(0xFF4BB198, kPrimaryColorMap);
+MaterialColor customKPrimaryColor = MaterialColor(
+  0xFF296CF0,
+  kPrimaryColorMap,
+);
