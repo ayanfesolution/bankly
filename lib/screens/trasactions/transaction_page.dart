@@ -1,7 +1,9 @@
 import 'package:auto_adjust/auto_adjust.dart';
+import 'package:bankly/screens/trasactions/transaction_details.dart';
 import 'package:bankly/utils/app_color.dart';
 import 'package:bankly/utils/app_componenet/padded.dart';
 import 'package:bankly/utils/constants.dart';
+import 'package:bankly/utils/navigations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -173,30 +175,114 @@ class _TransactionPageState extends State<TransactionPage>
               child: TabBarView(
                 controller: tabController,
                 children: [
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: autoAdjustHeight(24),
-                            width: autoAdjustWidth(24),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                autoAdjustHeight(3),
-                              ),
-                              color: kGreenBGCOLOR,
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  )
+                  ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: 8,
+                    itemBuilder: (context, index) {
+                      return TransactionSingleWidget();
+                    },
+                  ),
+                  ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: 8,
+                    itemBuilder: (context, index) {
+                      return TransactionSingleWidget();
+                    },
+                  ),
+                  ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: 8,
+                    itemBuilder: (context, index) {
+                      return TransactionSingleWidget();
+                    },
+                  ),
                 ],
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class TransactionSingleWidget extends StatelessWidget {
+  const TransactionSingleWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: autoAdjustHeight(15)),
+          child: InkWell(
+            onTap: () {
+              RouteNavigators.route(
+                context,
+                const TransactionDetailsPage(),
+              );
+            },
+            child: Row(
+              children: [
+                Container(
+                  height: autoAdjustHeight(24),
+                  width: autoAdjustWidth(24),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      autoAdjustHeight(3),
+                    ),
+                    color: kGreenBGCOLOR,
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(autoAdjustHeight(9)),
+                    child: SizedBox(
+                      height: autoAdjustHeight(6),
+                      width: autoAdjustWidth(6),
+                      child: SvgPicture.asset('assests/svgs/moneyin.svg'),
+                    ),
+                  ),
+                ),
+                Gap(autoAdjustWidth(25)),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Transfer- charge',
+                        style: kTextStyleCustom(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Gap(autoAdjustHeight(6)),
+                      Text(
+                        '23, Apr 2022, 12:00:32 PM',
+                        style: kTextStyleCustom(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: kBLKLIGHTDeepColor),
+                      ),
+                    ],
+                  ),
+                ),
+                Text(
+                  '+₦130,630.00',
+                  style: kTextStyleCustom(
+                    fontWeight: FontWeight.w400,
+                    color: kGreenSuccessfulCOLOR,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+        Divider(
+          color: kDividerCOLOR,
+          thickness: autoAdjustHeight(1),
+        )
+      ],
     );
   }
 }

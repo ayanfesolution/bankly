@@ -12,7 +12,7 @@ const kREDCOLOUR = Color(0xFFE92022);
 // const kTransperent = Color(0x00FFFFFF);
 const kScalfold = Color(0xFFFBFBFF);
 const kINACTIVECOLOR = Color(0xFF808080);
-// const kYellowPendingCOLOR = Color(0xFFFEAA10);
+const kDividerCOLOR = Color(0xFFD3D3D3);
 const kGreenSuccessfulCOLOR = Color(0xFF219653);
 const kGreenBGCOLOR = Color(0xFFCFE7DD);
 
