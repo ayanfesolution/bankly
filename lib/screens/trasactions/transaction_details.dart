@@ -35,6 +35,7 @@ class TransactionDetailsPage extends StatelessWidget {
       return screenshotController
           .captureFromWidget(
         Container(
+            color: kWHTCOLOUR,
             height: autoAdjustHeight(550),
             padding: EdgeInsets.all(autoAdjustHeight(16)),
             child: Column(
