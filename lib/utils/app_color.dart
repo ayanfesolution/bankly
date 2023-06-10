@@ -9,6 +9,7 @@ const kWHTCOLOUR = Color(0xFFFFFFFF);
 const Color kBLKLIGHTColor = Color(0xFF9FA2AB);
 const Color kBLKLIGHTDeepColor = Color(0xFF828282);
 const kREDCOLOUR = Color(0xFFE92022);
+const kREDLIGHTCOLOUR = Color(0xFFFFE8EA);
 // const kTransperent = Color(0x00FFFFFF);
 const kScalfold = Color(0xFFFBFBFF);
 const kINACTIVECOLOR = Color(0xFF808080);

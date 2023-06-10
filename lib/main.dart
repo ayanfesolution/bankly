@@ -1,9 +1,16 @@
 import 'package:bankly/screens/splash.dart';
 import 'package:bankly/utils/theme_data.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'utils/module.dart';
+
+void main() async {
+  await initializeDependencies();
+
+  await getIt.allReady();
+
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +21,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bankly Transaction',
-      
       theme: BanklyThemeData.appThemeData(context),
       home: const SplashScreen(),
     );
